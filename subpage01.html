@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>윤희정 Portfolio - Python Code Archive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/webfontworld/naver/NanumBarunGothic.css">
+    <link rel="stylesheet" href="css/index.css"> 
+    <link rel="stylesheet" href="css/subpage.css"> 
+</head>
+<body>
+    <div class="bg_grid_pattern"></div>
+    <div class="bg_neon_glow"></div>
+
+    <div id="fullpage">
+        
+        <section class="hero" style="position:absolute; width:0; height:0; min-height:0; padding:0; background:none; z-index:10;">
+            <div class="hero_menu">
+                <a href="subpage01.html" class="hero_menu_item">
+                    <img src="img/icon_file.png" alt="">
+                    <span>코드</span>
+                </a>
+                <a href="subpage02.html" class="hero_menu_item">
+                    <img src="img/icon_file.png" alt="">
+                    <span>디자인</span>
+                </a>
+                <a href="subpage03.html" class="hero_menu_item">
+                    <img src="img/icon_file.png" alt="">
+                    <span>공모전</span>
+                </a>
+                <a href="subpage04.html" class="hero_menu_item">
+                    <img src="img/icon_file.png" alt="">
+                    <span>대외활동</span>
+                </a>
+                <a href="subpage05.html" class="hero_menu_item active">
+                    <img src="img/icon_file.png" alt="">
+                    <span>개인작업</span>
+                </a>
+            </div>
+            <button type="button" class="side_toggle" id="sideToggle" aria-label="왼쪽 메뉴 접기">◀</button>
+        </section>
+
+        <button type="button" class="hamburger" id="menuOpen" aria-label="전체 메뉴 열기">
+            <img src="img/icon_hamburger_menu.png" alt="">
+        </button>
+
+        <main class="sub_layout_container">
+            <div class="sub_content_wrap">
+                
+                <header class="sub_page_header">
+                    <div class="sub_header_bg_banner"></div>
+                    <div class="sub_header_bg_mask"></div>
+
+                    <div class="sub_header_content">
+                        <div class="sub_category_tag">CODE ARCHIVE</div>
+                        <h1 class="sub_main_title">
+                            <img src="img/subpage01_main_text.png" alt="">
+                        </h1>
+                        <p class="sub_main_desc">디자인 설계를 실형태의 논리적 코드로 변환하고 파싱하는 프로그래밍 백엔드 기술 아카이브입니다.</p>
+
+                        <nav class="sub_inner_nav">
+                            <div class="nav_label">PROJECTS:</div>
+                            <a href="#weather_project" class="active">01. Weather Insight</a>
+                        </nav>
+                    </div>
+                </header>
+
+                <section class="project_section" id="weather_project">
+                    <div class="project_title_block">
+                        <div class="project_badge">PROJECT 01</div>
+                        <h2 class="project_title">Python Weather Program</h2>
+                    </div>
+
+                    <div class="project_integrated_infobox">
+                        <div class="infobox_left">
+                            <h4>PROJECT OVERVIEW (구현 결과)</h4>
+                            <p>기상청 오픈 API 기반 코드작업 '날씨 알리미'입니다. 사용자가 알고자 하는 지역명을 입력하면 해당 지역의 강수량과 온도를 분석하여 눈, 눈+비, 비, 맑은 하늘 등의 간결하고 직관적인 상태 메시지를 구분하여 출력해주는 콘솔형 날씨 알리미 프로그램을 완성했습니다.</p>
+                        </div>
+                        <div class="infobox_right">
+                            <h4>ENGINE STACKS</h4>
+                            <div class="tech_tag_group">
+                                <span class="tech_tag">Python 3.x</span>
+                                <span class="tech_tag">Public Open API</span>
+                                <span class="tech_tag">JSON Decoding</span>
+                                <span class="tech_tag">Exception Handling</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project_detail_layout">
+                        <div class="story_cards_stack">
+                            <div class="detail_story_card">
+                                <div class="step_num">STEP 01</div>
+                                <h5>아이디어의 시작 : 기획 의도</h5>
+                                <p>복잡하고 파편화된 기상청의 수치 날씨 정보를 사용자가 직관적이고 간단하게 확인할 수 있도록, 지역명을 검색창에 입력하면 핵심 데이터(온도, 강수 상태)만 요약 출력하는 편리한 프로그램을 구상 및 기획했습니다.</p>
+                            </div>
+                            <div class="detail_story_card">
+                                <div class="step_num">STEP 02</div>
+                                <h5>구현 방식 : API 데이터 제어</h5>
+                                <p>공공 기상청 Open API 파이프라인을 연동하고, 호출 날짜와 시간 및 조회 타겟 행정 구역의 좌표 데이터를 매핑하여 동적 Query를 요청합니다. 유저의 검색 입력값 조건에 매칭되어 등록된 정밀 날씨 정보를 정제하여 실시간으로 불러오도록 구조화했습니다.</p>
+                            </div>
+                            <div class="detail_story_card">
+                                <div class="step_num">STEP 03</div>
+                                <h5>예외 처리 : 안전한 흐름 제어</h5>
+                                <p>서버 데이터에 등록되어 있지 않은 미확인 지역명을 입력할 경우 시스템이 강제 종료되는 현상을 막기 위해, 에러 안내 팝업 피드백과 함께 현재 등록 완료된 사용 가능 지역 목록을 함께 출력하도록 설계했습니다. 아울러 '종료' 커맨드를 입력하면 무한 루프를 탈출하여 자연스럽게 끝맺도록 안전 장치를 빌드했습니다.</p>
+                            </div>
+                        </div>
+
+                        <div class="visual_fixed_frame">
+                            <div class="visual_frame_title">DEVELOPMENT SCREENSHOTS &amp; DIAGRAMS</div>
+                            
+                            <div class="image_slots_grid">
+                                <div class="mockup_display_box">
+                                    <div class="mockup_inner">
+                                        <img src="img/code_sample_01_1.PNG" alt="" >
+                                    </div>
+                                    <div class="mockup_caption">01. 시스템 Flow Chart</div>
+                                </div>
+                                <div class="mockup_display_box">
+                                    <div class="mockup_inner">
+                                        <img src="img/code_sample_01_2.PNG" alt=""  >
+                                    </div>
+                                    <div class="mockup_caption">02. API 데이터 파싱 레이아웃</div>
+                                </div>
+                                <div class="mockup_display_box">
+                                    <div class="mockup_inner">
+                                        <img src="img/code_sample_01_3.PNG" alt="">
+                                    </div>
+                                    <div class="mockup_caption">03. Exception 필터 구동 테스트</div>
+                                </div>
+                                <div class="mockup_display_box">
+                                    <div class="mockup_inner">
+                                        <img src="img/code_sample_01_4.PNG" alt="">
+                                    </div>
+                                    <div class="mockup_caption">04. 결과 텍스트 인스턴스</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <footer class="sub_footer_nav">
+                    <a href="index.html" class="back_main_btn">← 메인 화면으로 이동</a>
+                </footer>
+
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="content_wrap">
+                <div class="footer_name">YUN<span>.</span>HJ</div>
+                <div class="footer_copy">ⓒ 2025 YUN HEEJUNG · DESIGNER & PUBLISHER</div>
+            </div>
+        </footer>
+    </div>
+
+    <div class="popup_menu" id="popupMenu">
+        <button type="button" class="popup_close" id="menuClose">CLOSE</button>
+        <div class="popup_title">PORTFOLIO MENU</div>
+        <div class="popup_group">
+            <h2>코드작업</h2>
+            <a href="subpage01.html">Weather Insight</a>
+        </div>
+        <div class="popup_group">
+            <h2>디자인 작업</h2>
+            <a href="subpage02.html">Web & Game UI/UX</a>
+            <a href="subpage02.html">Visual Concept Design</a>
+        </div>
+        <div class="popup_group">
+            <h2>공모전</h2>
+            <a href="subpage03.html">Campus Life App</a>
+            <a href="subpage03.html">Next Competitions</a>
+        </div>
+        <div class="popup_group">
+            <h2>대외활동</h2>
+            <a href="subpage04.html">Wear Now</a>
+            <a href="subpage04.html">Table 08</a>
+        </div>
+        <div class="popup_group">
+            <h2>개인 랩&amp;인사이트</h2>
+            <a href="subpage05.html">Keyring Artwork</a>
+            <a href="subpage05.html">Patch Artwork</a>
+        </div>
+    </div>
+
+    <script>
+        var menuOpen = document.getElementById("menuOpen");
+        var menuClose = document.getElementById("menuClose");
+        var popupMenu = document.getElementById("popupMenu");
+        var sideToggle = document.getElementById("sideToggle");
+
+        sideToggle.onclick = function(){
+            document.body.classList.toggle("side_closed");
+            if (document.body.classList.contains("side_closed")) {
+                sideToggle.innerHTML = "▶";
+                sideToggle.setAttribute("aria-label", "왼쪽 메뉴 열기");
+            } else {
+                sideToggle.innerHTML = "◀";
+                sideToggle.setAttribute("aria-label", "왼쪽 메뉴 접기");
+            }
+        };
+
+        menuOpen.onclick = function(){
+            popupMenu.className = "popup_menu show";
+            document.body.classList.add("menu_open");
+        };
+
+        menuClose.onclick = function(){
+            popupMenu.className = "popup_menu";
+            document.body.classList.remove("menu_open");
+        };
+    </script>
+</body>
+</html>
