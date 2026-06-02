@@ -1,0 +1,310 @@
+/* ==========================================================================
+   SUBPAGE MAIN LAYOUT & BACKGROUND SYSTEM (컬러감 있는 테크 배경 고도화)
+   ========================================================================== */
+body {
+    background: radial-gradient(circle at 80% 20%, #0c141f 0%, #06090e 100%);
+    background-color: #06090e; 
+    color: #e2ecf8;
+    font-family: "NanumBarunGothic", sans-serif;
+    font-size: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* 화려한 테크 감성의 정밀 격자 패턴 배경 */
+.bg_grid_pattern {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        linear-gradient(rgba(200, 255, 0, 0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 255, 0, 0.015) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* 배경 전체에 은은한 컬러감을 부여하는 광역 네온 글로우 레이어 */
+.bg_neon_glow {
+    position: fixed;
+    top: -10%; right: -5%; width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(200, 255, 0, 0.04) 0%, rgba(12, 20, 31, 0) 70%);
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(100px);
+}
+
+/* ==========================================================================
+   MAIN CONTENT CONTAINER (PC 해상도 기본 레이아웃)
+   ========================================================================== */
+.sub_layout_container {
+    width: 100%;
+    padding: 60px 60px 100px 220px; 
+    position: relative;
+    z-index: 1;
+}
+
+.sub_content_wrap {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   가로로 가득 찬 상단 헤더 배너 섹션 구조
+   ========================================================================== */
+.sub_page_header {
+    position: relative;
+    margin-bottom: 60px;
+    padding: 60px 50px 50px 50px; 
+    border-radius: 12px;
+    border: 1px solid rgba(200, 255, 0, 0.12); 
+    overflow: hidden; 
+    background-color: #0b1118; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.sub_header_bg_banner {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url("../img/header_main.png"); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: 1;
+    opacity: 0.25; 
+}
+
+.sub_header_bg_mask {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(6, 9, 14, 0.93) 40%, rgba(200, 255, 0, 0.08) 100%);
+    z-index: 2;
+}
+
+.sub_header_content {
+    position: relative;
+    z-index: 3;
+}
+
+.sub_category_tag {
+    font-family: "Jua", sans-serif;
+    color: #c8ff00;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.sub_main_title {
+    color: #edf5ff;
+    margin-bottom: 15px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.sub_main_title img {
+    display: block;
+    width: 50%;
+}
+
+.sub_main_desc {
+    font-size: 18px;
+    color: #a2b4c7;
+    line-height: 1.6;
+    max-width: 800px;
+    word-break: keep-all;
+}
+
+.sub_inner_nav {
+    margin-top: 35px;
+    padding: 16px 24px;
+    background-color: rgba(11, 17, 24, 0.85); 
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    backdrop-filter: blur(4px);
+    display: inline-flex; 
+    gap: 30px;
+    align-items: center;
+}
+
+.sub_inner_nav .nav_label {
+    font-family: "Jua", sans-serif;
+    font-size: 18px;
+    color: #c8ff00;
+    letter-spacing: 1px;
+}
+
+.sub_inner_nav a {
+    font-size: 18px;
+    color: #7e91a5;
+    transition: color 0.2s;
+}
+.sub_inner_nav a:hover, .sub_inner_nav a.active {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   PROJECT CONTENT ARTICLES & LAYOUTS (기획안 연동 콘텐츠 마스크)
+   ========================================================================== */
+.project_section {
+    padding: 60px 0 80px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.project_section:last-of-type { border-bottom: none; }
+.project_title_block { margin-bottom: 30px; }
+
+.project_badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: #c8ff00;
+    color: #06090e;
+    font-family: "Jua", sans-serif;
+    font-size: 16px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.project_title {
+    font-family: "Jua", sans-serif;
+    font-size: 38px;
+    color: #e6effa;
+}
+
+.project_integrated_infobox {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 40px;
+    background-color: rgba(200, 255, 0, 0.015);
+    border-left: 4px solid #c8ff00;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 35px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 45px;
+}
+
+.infobox_left h4 { font-family: "Jua", sans-serif; color: #c8ff00; font-size: 22px; margin-bottom: 12px; }
+.infobox_left p { font-size: 18px; color: #cbd9e8; line-height: 1.7; word-break: keep-all; }
+.infobox_right { border-left: 1px solid rgba(255, 255, 255, 0.06); padding-left: 40px; }
+.infobox_right h4 { font-family: "Jua", sans-serif; color: #edf5ff; font-size: 20px; margin-bottom: 15px; }
+
+.tech_tag_group { display: flex; flex-wrap: wrap; gap: 10px; }
+.tech_tag_group .tech_tag {
+    padding: 6px 14px;
+    border: 1px solid rgba(200, 255, 0, 0.15);
+    background-color: #c8ff00;
+    color: #0b1118;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* 대형 레이아웃 뷰 */
+.project_detail_layout { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.story_cards_stack { display: flex; flex-direction: column; gap: 20px; }
+
+.detail_story_card {
+    background-color: #0b1118;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 26px;
+    border-radius: 6px;
+    transition: border-color 0.3s, transform 0.3s;
+}
+.detail_story_card:hover { border-color: #c8ff00; transform: translateY(-3px); }
+.detail_story_card .step_num { font-family: "Jua", sans-serif; color: #c8ff00; font-size: 18px; margin-bottom: 8px; }
+.detail_story_card h5 { font-family: "Jua", sans-serif; font-size: 24px; color: #edf5ff; margin-bottom: 10px; }
+.detail_story_card p { font-size: 18px; color: #8fa0b3; line-height: 1.6; word-break: keep-all; }
+
+/* [요청 변경] 총 4개의 이미지가 2x2 그리드로 깔끔하게 들어차는 플레이스홀더 시스템 */
+.visual_fixed_frame { position: relative; display: flex; flex-direction: column; gap: 20px; }
+.visual_frame_title { font-family: "Jua", sans-serif; font-size: 18px; color: #8fa0b3; letter-spacing: 1px; border-left: 3px solid #c8ff00; padding-left: 10px; }
+
+.image_slots_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.mockup_display_box { 
+    width: 100%; 
+    background-color: #0b1118; 
+    border: 1px solid rgba(255, 255, 255, 0.06); 
+    border-radius: 8px; 
+    padding: 8px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4); 
+}
+.mockup_inner { 
+    width: 100%; 
+    aspect-ratio: 4 / 2.2; /* 다중 스크린샷 가독성을 고려한 안정적인 종횡비 */
+    background-color: #05080c; 
+    border-radius: 4px; 
+    position: relative; 
+    overflow: hidden; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.mockup_inner img { width: 100%; height: 100%; object-fit: cover; }
+.mockup_caption { margin-top: 8px; font-size: 14px; color: #617385; text-align: center; }
+
+.sub_footer_nav { margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+.back_main_btn { display: inline-block; font-family: "Jua", sans-serif; font-size: 18px; color: #06090e; background-color: #c8ff00; padding: 12px 28px; border-radius: 4px; transition: opacity 0.2s, transform 0.2s; font-weight: bold; }
+.back_main_btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (메뉴 무관 완벽 뷰포트 센터링 시스템)
+   ========================================================================== */
+@media only screen and (max-width: 1200px) {
+    .hero .hero_menu { 
+        display: block !important; 
+        position: fixed !important; 
+        top: 52px !important; 
+        left: 24px !important; 
+        z-index: 99; 
+        transition: left 0.35s ease !important; 
+    }
+    .hero .side_toggle { 
+        display: block !important; 
+        position: fixed !important; 
+        top: 50% !important; 
+        left: 152px !important; 
+        margin-top: -30vh !important; 
+        z-index: 100; 
+        transition: left 0.35s ease !important; 
+    }
+
+    body.side_closed .hero .hero_menu { left: -130px !important; }
+    body.side_closed .hero .side_toggle { left: 0 !important; }
+
+    /* 메뉴바 무시 정중앙 센터 배치 */
+    .sub_layout_container { 
+        padding: 80px 40px 60px 40px !important; 
+    }
+    
+    .sub_page_header { padding: 45px 30px 35px 30px; }
+    .sub_main_title img { width: 90%; }
+
+    .project_integrated_infobox { grid-template-columns: 1fr; gap: 24px; }
+    .infobox_right { border-left: none; padding-left: 0; padding-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.06); }
+    .project_detail_layout { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media only screen and (max-width: 768px) {
+    .hero .hero_menu { top: 30px !important; left: 10px !important; }
+    .hero .side_toggle { left: 134px !important; margin-top: -25vh !important; }
+    
+    body.side_closed .hero .hero_menu { left: -124px !important; }
+    body.side_closed .hero .side_toggle { left: 0 !important; }
+
+    .sub_layout_container { 
+        padding: 70px 24px 50px 24px !important; 
+    }
+    
+    .sub_page_header { padding: 30px 20px; }
+    .sub_main_title { font-size: 34px; }
+    .sub_main_desc { font-size: 16px; }
+    .sub_inner_nav { flex-direction: column; align-items: flex-start; gap: 12px; width: 100%; }
+    .project_title { font-size: 28px; }
+    .image_slots_grid { grid-template-columns: 1fr; } /* 모바일 가독성을 위해 1열 세로 배열 전환 */
+}
